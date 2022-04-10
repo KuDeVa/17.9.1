@@ -13,3 +13,20 @@ for i in range(len(array)):
             array[j], array[j + 1] = array[j + 1], array[j]
 
 print(array)
+
+element =5
+def binary_n(array, element, left, right):
+    if left > right:
+        return False
+
+    middle = (right + left) // 2
+    if array[middle] == element:
+        return middle
+    elif element < array[middle]:
+        return binary_n(array, element, left, middle - 1)
+    else:
+        return binary_n(array, element, middle + 1, right)
+
+print (element,"Позиция элемента")
+
+print(binary_n)
